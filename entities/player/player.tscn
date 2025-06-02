@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c27n3atsh0d3d"]
+
+[ext_resource type="Texture2D" uid="uid://dtge3le58q4v0" path="res://icon.svg" id="1_abrql"]
+[ext_resource type="Script" uid="uid://bscomovp5bjcs" path="res://entities/player/hand.gd" id="2_sglur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bls4j"]
+radius = 27.0185
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_abrql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bls4j")
+
+[node name="hand" type="Node2D" parent="."]
+position = Vector2(52, 1)
+script = ExtResource("2_sglur")
+metadata/_edit_group_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="hand"]
+polygon = PackedVector2Array(-7.78996, 12.0327, -7.78996, -9.27315, 9.44626, -9.27315, 9.68565, 11.7934)
+uv = PackedVector2Array(-470, 1, -470, -22, -450, -23, -450, 0)
