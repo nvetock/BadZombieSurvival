@@ -17,4 +17,6 @@ func _ready() -> void:
 	body_pos = get_parent().global_position
 
 func _process(delta: float) -> void:
-	position = get_local_mouse_position()
+	#position = get_local_mouse_position()
+	var mouse_angle: Vector2 = get_global_mouse_position()
+	print(atan2(mouse_angle.y, mouse_angle.x))
